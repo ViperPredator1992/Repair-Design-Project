@@ -1,0 +1,27 @@
+{
+  "name": "repair-design-project",
+  "version": "1.0.0",
+  "description": "\"Repair Design Project\" - Турецкий ремонт в Ростове-на-Дону",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViperPredator1992/Repair-Design-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViperPredator1992/Repair-Design-Project/issues"
+  },
+  "homepage": "https://github.com/ViperPredator1992/Repair-Design-Project#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-rename": "^2.0.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.7"
+  }
+}

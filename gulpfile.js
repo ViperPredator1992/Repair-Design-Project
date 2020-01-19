@@ -7,31 +7,33 @@ const sass = require('gulp-sass');
 // Static server
 function bs() {
     serveSass();
+    //minifyCSS();
     browserSync.init({
         server: {
             baseDir: "./src/"
         }
     });
     watch("./src/*.html").on('change', browserSync.reload);
-    watch("./sass/**/*.sass").on('change', serveSass);
-    watch("./js/*.js").on('change', browserSync.reload);
+    watch("./src/sass/**/*.sass").on('change', serveSass);
+    //watch("./src/css/*.css").on('change', minifyCSS);
+    watch("./src/js/*.js").on('change', browserSync.reload);
 }
 
 // CSS
-function minifyCSS(done) {
-    src('./src/css/*.css')
-    .pipe(rename({suffix: '.min'}))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(dest('dist/css/'));
-    //done();
-}
-minifyCSS();
+// function minifyCSS(done) {
+//     src('./src/css/*.css')
+//     .pipe(rename({suffix: '.min'}))
+//     .pipe(cleanCSS({compatibility: 'ie8'}))
+//     .pipe(dest('dist/css/'));
+//     //done();
+// }
+
 
 // SASS/SCSS
 function serveSass() {
-    return src("./sass/*.sass")
+    return src("./src/sass/*.sass")
         .pipe(sass())
-        .pipe(dest("./css"))
+        .pipe(dest("./src/css"))
         .pipe(browserSync.stream());
 }
 

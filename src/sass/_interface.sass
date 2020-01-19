@@ -31,3 +31,21 @@
     font-size: 40px
     &--primary
         color: $primary
+.section
+    &-title
+        text-align: center
+        text-transform: uppercase
+        &__heading
+            font-family: 'Yeseva One', cursive
+            font-weight: normal
+            font-size: 20px
+        &__image
+            display: flex
+            align-items: center
+            justify-content: center
+            &::before, &::after
+                content: ''
+                width: 32px
+                height: 2px
+                background-color: $primary
+                margin: 0 10px

@@ -15,6 +15,7 @@ function bs() {
     });
     watch("./src/*.html").on('change', browserSync.reload);
     watch("./src/sass/**/*.sass").on('change', serveSass);
+    watch("./src/sass/**/*.scss").on('change', serveSass);
     //watch("./src/css/*.css").on('change', minifyCSS);
     watch("./src/js/*.js").on('change', browserSync.reload);
 }
@@ -31,7 +32,7 @@ function bs() {
 
 // SASS/SCSS
 function serveSass() {
-    return src("./src/sass/*.sass")
+    return src("./src/sass/**/*.sass", "./src/sass/**/*.scss")
         .pipe(sass())
         .pipe(dest("./src/css"))
         .pipe(browserSync.stream());

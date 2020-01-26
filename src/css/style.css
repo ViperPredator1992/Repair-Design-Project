@@ -25,6 +25,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'FuturaMediumC';
+  src: url("../fonts/FuturaMediumC.eot");
+  src: local("FuturaMediumC"), url("../fonts/FuturaMediumC.eot?#iefix") format("embedded-opentype"), url("../fonts/FuturaMediumC.woff2") format("woff2"), url("../fonts/FuturaMediumC.woff") format("woff"), url("../fonts/FuturaMediumC.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -386,11 +394,11 @@ template {
   color: #ffffff;
   -webkit-box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
           box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
-  -webkit-transition: -webkit-box-shadow 0.3s;
-  transition: -webkit-box-shadow 0.3s;
-  -o-transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  -webkit-transition: -webkit-box-shadow 0.4s;
+  transition: -webkit-box-shadow 0.4s;
+  -o-transition: box-shadow 0.4s;
+  transition: box-shadow 0.4s;
+  transition: box-shadow 0.4s, -webkit-box-shadow 0.4s;
 }
 
 .button--primary:hover {
@@ -430,7 +438,7 @@ template {
 
 .section-title__heading {
   font-family: 'Yeseva One', cursive;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 20px;
   margin: 0 0 13px;
 }
@@ -464,6 +472,22 @@ template {
   text-transform: none;
   max-width: 740px;
   line-height: 27px;
+}
+
+.label {
+  font-family: 'FuturaBookC', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.label--light {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .container {
@@ -729,7 +753,7 @@ button {
   color: #E3B873;
 }
 
-.scroll-down--arrow {
+.scroll-down__arrow {
   width: 29px;
   height: 29px;
   border-radius: 50%;
@@ -818,6 +842,183 @@ button {
 .design .card__price {
   text-align: left;
   padding: 17px 18px 17px 33px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal--visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal__dialog {
+  position: relative;
+  z-index: 150;
+  max-width: 509px;
+  background-color: #181818;
+  -webkit-box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.05);
+  padding: 33px 49px 27px;
+}
+
+.modal__dialog::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mih-height: 528px;
+  background: url(../img/line_modal.svg) center/cover no-repeat;
+}
+
+.modal__title {
+  font-family: 'Yeseva One', cursive;
+  font-weight: 400;
+  font-size: 19px;
+  text-align: center;
+  color: #ffffff;
+  max-width: 360px;
+  margin: 0 auto 34px;
+  line-height: 26px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  border: 2px solid #ffffff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.modal__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: auto;
+  min-width: 213px;
+  height: 51px;
+}
+
+.modal__form {
+  position: relative;
+}
+
+.form__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 48px;
+}
+
+.form__group:nth-child(3) {
+  margin-bottom: 0;
+}
+
+.form__group:nth-child(4) {
+  margin: 16px 0 38px;
+}
+
+.form-group__label {
+  margin-bottom: 7px;
+}
+
+.form-group__input {
+  padding: 0 5px 9px 0;
+  color: #ffffff;
+}
+
+.form-group__input::-webkit-input-placeholder {
+  font-family: 'FuturaMediumC', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.form-group__input:-ms-input-placeholder {
+  font-family: 'FuturaMediumC', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.form-group__input::-ms-input-placeholder {
+  font-family: 'FuturaMediumC', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.form-group__input::placeholder {
+  font-family: 'FuturaMediumC', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.policy__checkbox {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.policy__checkbox:checked + .policy__label::before {
+  background: #E3B873 url("../img/check.svg") center/10px no-repeat;
+}
+
+.policy__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'FuturaBookC', sans-serif;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.policy__label::before {
+  content: '';
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #E3B873;
+  border-radius: 1px;
+  cursor: pointer;
 }
 
 @media (max-width: 1320px) {

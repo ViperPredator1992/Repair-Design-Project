@@ -22,7 +22,7 @@
                 </nav>
                 <div class="contacts">
                     <a href="tel:+79997683299" class="contacts__phone phone">+7 (999) 768-32-99</a>
-                    <button class="button contacts__button button--primary">Заказать звонок</button>
+                    <button class="button contacts__button button--primary" data-toggle="modal">Заказать звонок</button>
                 </div>
             </div>
         </div>
@@ -36,12 +36,12 @@
                 <div class="hero__content">
                     <h1 class="title hero__title">Турецкий ремонт в&nbsp;<span class="title--primary">Ростове-на-дону</span></h1>
                     <p class="hero__text">Получите готовый ремонт под ключ в срок с экономией рабочего времени до 45 дней и 20% от стоимости материалов за счет организации работы</p>
-                    <button class="button hero__button button--primary">Рассчитать стоимость</button>
-                    <button class="button hero__button button--outline">Отправить заявку</button>
+                    <button class="button hero__button button--primary" data-toggle="modal">Рассчитать стоимость</button>
+                    <button class="button hero__button button--outline" data-toggle="modal">Отправить заявку</button>
                 </div>
             </div>
             <div class="hero__scroll-down flex flex-center">
-                <a href="#" class="scroll-down">листайте вниз <span class="scroll-down--arrow"></span></a>
+                <a href="#" class="scroll-down">листайте вниз <span class="scroll-down__arrow"></span></a>
             </div>
         </section>
         <section class="section control">
@@ -122,7 +122,7 @@
         </section>
         <section class="section design">
             <div class="container">
-                <div class="section-title types__section-title">
+                <div class="section-title design__section-title">
                     <h2 class="section-title__heading">Дизайн проект</h2>
                     <div class="section-title__image">
                         <img src="./img/design.svg" alt="design">
@@ -197,6 +197,34 @@
         </section>
     </main>
 
-    <script src="./js/script.js"></script>
+    <div class="modal">
+        <div class="modal__dialog">
+            <button class="modal__close">&times;</button>
+            <h4 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами</h4>
+            <form action="#" class="form modal__form" method="post">
+                <div class="form-group form__group">
+                    <label for="user-name" class="label form-group__label label--light">Имя</label>
+                    <input type="text" name="" id="user-name" class="input form-group__input" placeholder="Как вас зовут:">
+                </div>
+                <div class="form-group form__group">
+                    <label for="user-phone" class="label form-group__label label--light">Телефон</label>
+                    <input type="tel" name="" id="user-phone" class="input form-group__input" placeholder="Ваш номер телефона:">
+                </div>
+                <div class="form-group form__group">
+                    <label for="user-email" class="label form-group__label label--light">Email</label>
+                    <input type="email" name="" id="user-email" class="input form-group__input" placeholder="Ваш email:">
+                </div>
+                <div class="policy form__group">
+                    <input type="checkbox" name="user_policy" id="user-policy" class="policy__checkbox" checked>
+                    <label for="user-policy" class="policy__label">Я соглашаюсь с обработкой данных</label>
+                </div>
+                <button class="button button--primary modal__button" type="submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
+    <script src="/dist/js/script.js"></script>
 </body>
 </html>

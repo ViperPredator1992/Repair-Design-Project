@@ -1,0 +1,104 @@
+.modal
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    background-color: rgba($black, .6)
+    z-index: 100
+    align-items: center
+    justify-content: center
+    &--visible
+        display: flex
+    &__dialog
+        position: relative
+        z-index: 150
+        max-width: 509px
+        background-color: $darkModalBg
+        box-shadow: 0px 30px 30px rgba($black, .05)
+        padding: 33px 49px 27px
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            mih-height: 528px
+            background: url(../img/line_modal.svg) center/cover no-repeat
+    &__title
+        font-family: 'Yeseva One', cursive
+        font-weight: 400
+        font-size: 19px
+        text-align: center
+        color: $light
+        max-width: 360px
+        margin: 0 auto 34px
+        line-height: 26px
+    &__close
+        position: absolute
+        top: 11px
+        right: 11px
+        border: 2px solid $light
+        width: 28px
+        height: 28px
+        border-radius: 50%
+        background-color: transparent
+        color: $light
+        font-size: 20px
+    &__button
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-left: auto
+        min-width: 213px
+        height: 51px
+    &__form
+        position: relative
+.form
+    &__group
+        display: flex
+        flex-direction: column
+        margin-bottom: 48px
+        &:nth-child(3)
+            margin-bottom: 0
+        &:nth-child(4)
+            margin: 16px 0 38px
+    &-group
+        &__label
+            margin-bottom: 7px    
+        &__input
+            padding: 0 5px 9px 0
+            color: $light
+            &::placeholder
+                font-family: 'FuturaMediumC', sans-serif
+                font-weight: 500
+                font-size: 18px
+                color: $light
+.policy
+    &__checkbox
+        opacity: 0
+        visibility: hidden
+        &:checked +
+            .policy
+                &__label
+                    &::before
+                        background: $primary url('../img/check.svg') center / 10px no-repeat
+    &__label
+        display: flex
+        align-items: center
+        font-family: 'FuturaBookC', sans-serif
+        color: $light
+        font-weight: 400
+        font-size: 16px
+        &::before
+            content: ''
+            margin-right: 8px
+            width: 18px
+            height: 18px
+            border: 1px solid $primary
+            border-radius: 1px
+            cursor: pointer

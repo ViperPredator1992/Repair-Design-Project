@@ -1,6 +1,6 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', function (event) {
-   
-    'use strict';
 
     // Модальное окно
     const modal = document.querySelector('.modal'),
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         modal.classList.toggle('modal--visible');
     };
 
-    const removeModal = () => {
+    const modalClose = () => {
         modal.classList.remove('modal--visible');
     };
     
@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     document.addEventListener('keydown', function (event) {
         if (event.code == "Escape") {
-            removeModal();
+            modalClose();
         }
     }); 
 
 });
 
-// $(document).ready(function () {
+$(document).ready(function () {
    
 //     // Модальное окно
 //     const modal = $('.modal'),
@@ -55,4 +55,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
 //         }
 //     });
 
-// });
+    // Скрол в низ
+    $('.scroll-down').on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(window).height()- 80
+        }, 900);
+    });	
+
+});

@@ -4,6 +4,7 @@ const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 
+
 // Static server
 function bs() {
     serveSass();
